@@ -11,8 +11,8 @@ for statement in statements :
          
         for row in transactions:
             for fieldname in fieldnames:
-                transaction_event  =str(row[fieldname]).lower() 
-                if statement["match"].lower() in transaction_event:
+                cell  =str(row[fieldname]).lower() 
+                if statement["match"].lower() in cell:
                     amount = amount + float(row[statement["key"]].replace(",","."))
                     with open('Differences.txt','a') as output:
                         output.write("Transactionn event:\n")
